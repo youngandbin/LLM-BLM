@@ -23,15 +23,15 @@ model
 """
 model_name = args.model_name
 if model_name == 'gpt':
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="{API_KEY}")
 elif model_name == 'llama':
     client = OpenAI(
-        base_url=f"https://ycgxwcqecjbmtzxg.tunnel-pt.elice.io/v1", # registry1, port 3000
+        base_url=f"https://{API_ENDPOINT}", 
         api_key="-",
     )
 elif model_name == 'gemma':
     client = OpenAI(
-        base_url=f"https://kahfaggrfrpnfpmk.tunnel-pt.elice.io/v1/", # registry4, port 3000
+        base_url=f"https://{API_ENDPOINT}",
         api_key="-",
     )
 
