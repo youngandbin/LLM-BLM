@@ -1,8 +1,8 @@
 # Integrating LLM-Generated Views into the Black-Litterman Model 
 
-This is an official implementation of the paper `Integrating LLM-Generated Views into the Black-Litterman Model`, submitted to `ICLR 2025 Workshop on Advances in Financial AI: Opportunities, Innovations, and Responsible AI`.
+ > This is an official implementation of the paper `Integrating LLM-Generated Views into the Black-Litterman Model`, submitted to `ICLR 2025 Workshop on Advances in Financial AI: Opportunities, Innovations, and Responsible AI`.
 
-
+![model](figures/model.pdf)
 
 ## Project Structure
 
