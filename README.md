@@ -4,9 +4,7 @@
 
 ![model](figures/model.png)
 
-![model](figures/cumulative_returns.png)
 
-![model](figures/boxplot_all_models_dates.png)
 
 
 ## Project Structure
@@ -51,6 +49,10 @@ The evaluation process is split into two main components:
 - Processes multiple time periods
 - Generates final performance metrics and comparisons
 - Stores final evaluation results in `results/` directory
+
+![model](figures/cumulative_returns.png)
+
+![model](figures/boxplot_all_models_dates.png)
 
 ## File Descriptions
 
