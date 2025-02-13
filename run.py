@@ -46,9 +46,9 @@ date_range = pd.date_range(start="2024-06-01", end="2024-12-01", freq='MS')
 os.makedirs('yfinance', exist_ok=True)
 os.makedirs('responses', exist_ok=True)
 
-# 1. S&P500 티커 데이터 가져오기
+# 1. S&P500 ticker data
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-tables = pd.read_html(url)[0]  # Wikipedia의 테이블 데이터 읽기
+tables = pd.read_html(url)[0]  # Wikipedia table data
 sp500_table = tables[['Symbol', 'Security', 'GICS Sector', 'GICS Sub-Industry']]
 
 for current_date in tqdm(date_range):
@@ -66,7 +66,7 @@ for current_date in tqdm(date_range):
     returns.to_csv(f'yfinance/returns_{month_start}_{month_end}.csv')
     sp500_tickers = returns.columns
 
-    # 데이터 정리하기
+    # Organize data
     data_dict = {}
     for ticker in sp500_tickers:
         data_dict[ticker] = {
@@ -109,7 +109,7 @@ for current_date in tqdm(date_range):
             # concat system prompt and user prompt (cuz gemma does not support system prompt)
             user_prompt = system_prompt + "\n\n" + user_prompt
 
-        # 30번 반복해서 답변을 받아서, 그 값의 variance를 view의 confidence로 사용
+        # Get responses 30 times, and use the variance of those values as the confidence of the view.
         answers = []
         for _ in range(30):
             if model_name == 'gpt':
