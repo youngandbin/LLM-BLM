@@ -4,6 +4,11 @@
 
 ![model](figures/model.png)
 
+![model](figures/cumulative_returns.png)
+
+![model](figures/boxplot_all_models_dates.png)
+
+
 ## Project Structure
 
 ```
