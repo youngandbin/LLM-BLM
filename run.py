@@ -24,17 +24,17 @@ model
 model_name = args.model_name
 if model_name == 'llama':
     client = OpenAI(
-        base_url=f"https://{API_ENDPOINT}", 
+        base_url=f"https://{YOUR_API_ENDPOINT}", 
         api_key="-",
     )
 elif model_name == 'gemma':
     client = OpenAI(
-        base_url=f"https://{API_ENDPOINT}",
+        base_url=f"https://{YOUR_API_ENDPOINT}",
         api_key="-",
     )
 elif model_name == 'qwen':
     client = OpenAI(
-        base_url=f"{YOUR_API_ENDPOINT}", 
+        base_url=f"https://{YOUR_API_ENDPOINT}", 
         api_key="-",
     )
 
