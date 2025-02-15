@@ -26,7 +26,7 @@
 ### 1. Data Collection and LLM Views (`run.py`)
 - Downloads S&P 500 stock price data using yfinance API
 - Data is stored in the `yfinance/` directory
-- Queries different LLM models (GPT, LLaMA, Gemma) for stock return predictions
+- Queries different LLM models (Qwen, LLaMA, Gemma) for stock return predictions
 - LLM responses are stored in `responses/` directory as JSON files
 
 ### 2. Baseline Portfolio Construction (`baselines.py`)
@@ -72,7 +72,7 @@ The evaluation process is split into two main components:
 
 1. Run LLM predictions:
 ```bash
-python run.py --model_name [gpt|llama|gemma]
+python run.py --model_name [qwen|llama|gemma]
 ```
 
 2. Generate baseline portfolios:
