@@ -15,16 +15,14 @@ class ResearchPaperExtraction(BaseModel):
 
 # make model_name arg parser
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_name", type=str, default="gpt")
+parser.add_argument("--model_name", type=str, default="llama")
 args = parser.parse_args()
 
 """
 model
 """
 model_name = args.model_name
-if model_name == 'gpt':
-    client = OpenAI(api_key="{API_KEY}")
-elif model_name == 'llama':
+if model_name == 'llama':
     client = OpenAI(
         base_url=f"https://{API_ENDPOINT}", 
         api_key="-",
@@ -32,6 +30,11 @@ elif model_name == 'llama':
 elif model_name == 'gemma':
     client = OpenAI(
         base_url=f"https://{API_ENDPOINT}",
+        api_key="-",
+    )
+elif model_name == 'qwen':
+    client = OpenAI(
+        base_url=f"{YOUR_API_ENDPOINT}", 
         api_key="-",
     )
 
@@ -112,15 +115,7 @@ for current_date in tqdm(date_range):
         # Get responses 30 times, and use the variance of those values as the confidence of the view.
         answers = []
         for _ in range(30):
-            if model_name == 'gpt':
-                completion = client.beta.chat.completions.parse(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt}
-                    ],
-                    response_format=ResearchPaperExtraction)
-            elif model_name == 'llama':
+            if model_name == 'llama':
                 completion = client.chat.completions.create(
                     model="meta-llama/Meta-Llama-3.1-8B-Instruct",
                     messages=[
@@ -134,6 +129,15 @@ for current_date in tqdm(date_range):
                     model="google/gemma-7b-it",
                     messages=[
                         # {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt}
+                    ],
+                    extra_body={"guided_json": ResearchPaperExtraction.model_json_schema()}
+                )
+            elif model_name == 'qwen':
+                completion = client.chat.completions.create(
+                    model="qwen2-7b-instruct",
+                    messages=[
+                        {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
                     extra_body={"guided_json": ResearchPaperExtraction.model_json_schema()}
