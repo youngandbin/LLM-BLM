@@ -2,7 +2,7 @@
 
  > This is an official implementation of the paper `Integrating LLM-Generated Views into the Black-Litterman Model`, submitted to `ICLR 2025 Workshop on Advances in Financial AI: Opportunities, Innovations, and Responsible AI`.
 
-![model](figures/model.png)
+![model](figures/model.pdf)
 
 
 
