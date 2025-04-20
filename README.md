@@ -51,8 +51,8 @@ The evaluation process is split into two main components:
 - Stores final evaluation results in `results/` directory
 
 ![model](figure/cumulative_returns2.png)
-
 ![model](figure/boxplot_all2.png)
+![model](figure/compare_weight2.png)
 
 ## File Descriptions
 
