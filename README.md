@@ -1,4 +1,4 @@
-# Integrating LLM-Generated Views into the Black-Litterman Model 
+# Integrating LLM-Generated Views into Mean-Variance Optimization Using the Black-Litterman Model 
 
  > This is an official implementation of the paper `Integrating LLM-Generated Views into Mean-Variance Optimization Using the Black-Litterman Model`, presented at [ICLR 2025 Workshop on Advances in Financial AI](https://sites.google.com/view/financialaiiclr25/home).
 
