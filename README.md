@@ -1,8 +1,8 @@
 # Integrating LLM-Generated Views into the Black-Litterman Model 
 
- > This is an official implementation of the paper `Integrating LLM-Generated Views into the Black-Litterman Model`, submitted to `ICLR 2025 Workshop on Advances in Financial AI: Opportunities, Innovations, and Responsible AI`.
+ > This is an official implementation of the paper `Integrating LLM-Generated Views into Mean-Variance Optimization Using the Black-Litterman Model`, presented at [ICLR 2025 Workshop on Advances in Financial AI](https://sites.google.com/view/financialaiiclr25/home).
 
-![model](figures/model.pdf)
+![model](figures/model.png)
 
 
 
@@ -26,7 +26,7 @@
 ### 1. Data Collection and LLM Views (`run.py`)
 - Downloads S&P 500 stock price data using yfinance API
 - Data is stored in the `yfinance/` directory
-- Queries different LLM models (Qwen, LLaMA, Gemma) for stock return predictions
+- Queries different LLM models (Qwen, LLaMA, Gemma, GPT) for stock return predictions
 - LLM responses are stored in `responses/` directory as JSON files
 
 ### 2. Baseline Portfolio Construction (`baselines.py`)
@@ -50,9 +50,9 @@ The evaluation process is split into two main components:
 - Generates final performance metrics and comparisons
 - Stores final evaluation results in `results/` directory
 
-![model](figures/cumulative_returns.png)
+![model](figures/cumulative_returns2.png)
 
-![model](figures/boxplot_all_models_dates.png)
+![model](figures/boxplot_all2.png)
 
 ## File Descriptions
 
@@ -72,7 +72,7 @@ The evaluation process is split into two main components:
 
 1. Run LLM predictions:
 ```bash
-python run.py --model_name [qwen|llama|gemma]
+python run.py --model_name [qwen|llama|gemma|gpt]
 ```
 
 2. Generate baseline portfolios:
