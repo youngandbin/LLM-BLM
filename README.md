@@ -2,7 +2,7 @@
 
  > This is an official implementation of the paper `Integrating LLM-Generated Views into Mean-Variance Optimization Using the Black-Litterman Model`, presented at [ICLR 2025 Workshop on Advances in Financial AI](https://sites.google.com/view/financialaiiclr25/home).
 
-![model](figures/model.png)
+![model](figure/model.png)
 
 
 
@@ -33,7 +33,7 @@
 - Implements two baseline portfolio strategies:
   1. Equal-weighted portfolio
   2. Mean-variance optimized portfolio
-- Processes data monthly from June 2024 to December 2024
+- Processes data monthly from June 2024 to February 2025
 - Portfolio weights and returns are stored in `responses_portfolios/`
 
 ### 3. Portfolio Evaluation
@@ -50,9 +50,9 @@ The evaluation process is split into two main components:
 - Generates final performance metrics and comparisons
 - Stores final evaluation results in `results/` directory
 
-![model](figures/cumulative_returns2.png)
+![model](figure/cumulative_returns2.png)
 
-![model](figures/boxplot_all2.png)
+![model](figure/boxplot_all2.png)
 
 ## File Descriptions
 
